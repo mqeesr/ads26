@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+bool isprime(int a){
+
+    if(a <= 1) return false;
+    for(int i = 2; i * i <= a; i++){
+        if(a % i == 0) return false;
+    }
+    return true;
+}
+
+int main(){
+
+    int n, cnt = 0, num = 1; cin >> n;
+
+    while(cnt < n){
+        num++;
+        if(isprime(num)) cnt++;
+    }
+
+    cout << num << endl;
+}
